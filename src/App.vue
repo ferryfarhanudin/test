@@ -1,26 +1,140 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <v-content>
+      <v-container fluid t>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(#ffbf0b, #e20000);
+}
+
+header{
+  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('https://wallpaperaccess.com/full/20996.jpg');
+  height: 100vh;
+  background-position: center center
+}
+
+.banner-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.navbar-brand{
+  font-family: big john;
+}
+
+.nav-link{
+  font-family: big john;
+  text-transform: uppercase;
+}
+
+.banner-text p{
+  font-family: poppins;
+  color: #fff;
+}
+
+.banner-btn a{
+  border: 1px solid #fff;
+  border-radius: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 50px;
+  display: inline-block;
+  margin-top: 15px;
+  color: #fff;
+}
+
+.banner-btn a.active{
+  background: #fed136;
+  border-color: #fed136;
+  color: #000;
+}
+
+.text-area{
+  font-size: 70px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.text-area span{
+  color: #fed136;
+  opacity: 0;
+  transform: translate(0, -100px) rotate(360deg) scale(0);
+  animation: animate 5s forwards;
+}
+
+.text-area span{
+  display: inline-block;
+}
+
+.text-area span:nth-of-type(2){
+  animation-delay: .1s;
+}
+
+.text-area span:nth-of-type(3){
+  animation-delay: .2s;
+}
+
+.text-area span:nth-of-type(4){
+  animation-delay: .3s;
+}
+
+.text-area span:nth-of-type(5){
+  animation-delay: .4s;
+}
+
+.text-area span:nth-of-type(6){
+  animation-delay: .5s;
+}
+
+.text-area span:nth-of-type(7){
+  animation-delay: .6s;
+}
+
+.text-area span:nth-of-type(8){
+  animation-delay: .7s;
+}
+
+@keyframes animate{
+  30%{
+    transform: translate(0, -50px) rotate(180deg) scale(1);
+  }
+  60%{
+    transform: translate(0, 20px) rotate(0deg) scale(.8);
+  }
+  100%{
+    transform: translate(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px){
+  .banner-text p{
+    display: none;
+  }
+
+  .navbar-dark{
+    background-color: #333;
+  }
+  .text-area{
+    font-size: 35px;
+  }
 }
 </style>
